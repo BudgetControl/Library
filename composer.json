@@ -1,0 +1,17 @@
+{
+    "name": "budgetcontrol/library",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Budgetcontrol\\Library\\": "libs/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco De Felice",
+            "email": "marco.defelice@mlabfactory.it"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
