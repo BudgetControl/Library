@@ -13,5 +13,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "illuminate/database": "11.19",
+        "ramsey/uuid": "^4.7"
+    }
 }
