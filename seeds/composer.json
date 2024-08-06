@@ -1,0 +1,28 @@
+{
+    "name": "budgetcontrol/seeds",
+    "description": "Seeds and migrations for unit test",
+    "type": "library",
+    "license": "MIT",
+    "repositories": {
+        "budgetcontrol/library" : {
+            "type":"vcs",
+            "url":"https://github.com/BudgetControl/Library.git"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Budgetcontrol\\Seeds\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco De Felice",
+            "email": "marco.defelice@mlabfactory.it"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "ramsey/uuid": "^4.7",
+        "budgetcontrol/library": "dev-main"
+    }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "United States Dollar",
+    "label": "USD",
+    "icon": "$",
+    "slug": "united-states-dollar"
+  },
+  {
+    "name": "Euro",
+    "label": "EUR",
+    "icon": "€",
+    "slug": "euro"
+  },
+  {
+    "name": "British Pound",
+    "label": "GBP",
+    "icon": "£",
+    "slug": "british-pound"
+  },
+  {
+    "name": "Japanese Yen",
+    "label": "JPY",
+    "icon": "¥",
+    "slug": "japanese-yen"
+  },
+  {
+    "name": "Swiss Franc",
+    "label": "CHF",
+    "icon": "CHF",
+    "slug": "swiss-franc"
+  },
+  {
+    "name": "Canadian Dollar",
+    "label": "CAD",
+    "icon": "CA$",
+    "slug": "canadian-dollar"
+  },
+  {
+    "name": "Australian Dollar",
+    "label": "AUD",
+    "icon": "A$",
+    "slug": "australian-dollar"
+  },
+  {
+    "name": "New Zealand Dollar",
+    "label": "NZD",
+    "icon": "NZ$",
+    "slug": "new-zealand-dollar"
+  },
+  {
+    "name": "Swedish Krona",
+    "label": "SEK",
+    "icon": "SEK",
+    "slug": "swedish-krona"
+  },
+  {
+    "name": "Norwegian Krone",
+    "label": "NOK",
+    "icon": "NOK",
+    "slug": "norwegian-krone"
+  },
+  {
+    "name": "Danish Krone",
+    "label": "DKK",
+    "icon": "DKK",
+    "slug": "danish-krone"
+  },
+  {
+    "name": "Singapore Dollar",
+    "label": "SGD",
+    "icon": "SGD",
+    "slug": "singapore-dollar"
+  },
+  {
+    "name": "Hong Kong Dollar",
+    "label": "HKD",
+    "icon": "HKD",
+    "slug": "hong-kong-dollar"
+  },
+  {
+    "name": "Chinese Yuan",
+    "label": "CNY",
+    "icon": "¥",
+    "slug": "chinese-yuan"
+  },
+  {
+    "name": "Russian Ruble",
+    "label": "RUB",
+    "icon": "₽",
+    "slug": "russian-ruble"
+  },
+  {
+    "name": "Indian Rupee",
+    "label": "INR",
+    "icon": "₹",
+    "slug": "indian-rupee"
+  },
+  {
+    "name": "Indonesian Rupiah",
+    "label": "IDR",
+    "icon": "Rp",
+    "slug": "indonesian-rupiah"
+  },
+  {
+    "name": "Brazilian Real",
+    "label": "BRL",
+    "icon": "R$",
+    "slug": "brazilian-real"
+  },
+  {
+    "name": "Mexican Peso",
+    "label": "MXN",
+    "icon": "MXN",
+    "slug": "mexican-peso"
+  },
+  {
+    "name": "Argentine Peso",
+    "label": "ARS",
+    "icon": "$",
+    "slug": "argentine-peso"
+  }
+]

@@ -25,7 +25,6 @@ class Entry extends Model implements EntryInterface
         'planned',
         'installment',
         'category_id',
-        'model_id',
         'account_id',
         'transfer_id',
         'transfer_relation',
@@ -64,6 +63,10 @@ class Entry extends Model implements EntryInterface
 
     public function getGeolocationAttribute($value)
     {
+        if (is_null($value)) {
+            return null;
+        }
+        
         return json_decode($value);
     }
 

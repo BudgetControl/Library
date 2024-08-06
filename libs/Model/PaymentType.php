@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentType extends Model implements EntryInterface
 {
-    protected $table = 'payment_types';
+    protected $table = 'payments_types';
 }

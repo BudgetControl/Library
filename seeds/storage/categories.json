@@ -1,0 +1,504 @@
+[
+  {
+    "category": {
+      "label": "food-&-drinks",
+      "icon": "fas fa-hamburger",
+      "slug": "food-drinks",
+      "uuid": "635bd33fab82e",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd33fc645d",
+          "name": "bars-&-clubs",
+          "slug": "bars-clubs"
+        },
+        {
+          "uuid": "635bd33fe2db1",
+          "name": "restaurants & fast-food",
+          "slug": "restaurants-fast-food"
+        },
+        {
+          "uuid": "635bd34005b12",
+          "name": "groceries",
+          "slug": "groceries"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "shopping",
+      "icon": "fas fa-shopping-cart",
+      "slug": "shopping",
+      "uuid": "635bd34082904",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd3409933b",
+          "name": "clothing & shoes",
+          "slug": "clothing-shoes"
+        },
+        {
+          "uuid": "635bd340b1bd5",
+          "name": "pets",
+          "slug": "pets"
+        },
+        {
+          "uuid": "635bd34156a8a",
+          "name": "beauty & wellness",
+          "slug": "beauty-wellness"
+        },
+        {
+          "uuid": "635bd3417082b",
+          "name": "stationery & tools",
+          "slug": "stationery-tools"
+        },
+        {
+          "uuid": "635bd34187428",
+          "name": "home & garden",
+          "slug": "home-garden"
+        },
+        {
+          "uuid": "635bd3419e3bc",
+          "name": "electronics, accessories",
+          "slug": "electronics-accessories"
+        },
+        {
+          "uuid": "635bd341b4fd1",
+          "name": "pharmacy",
+          "slug": "pharmacy"
+        },
+        {
+          "uuid": "635bd341cc935",
+          "name": "children",
+          "slug": "children"
+        },
+        {
+          "uuid": "635bd341e3f4d",
+          "name": "jewelry & accessories",
+          "slug": "jewelry-accessories"
+        },
+        {
+          "uuid": "635bd342061d0",
+          "name": "gifts",
+          "slug": "gifts"
+        },
+        {
+          "uuid": "635bd3421c9df",
+          "name": "family assistance",
+          "slug": "family-assistance"
+        },
+        {
+          "uuid": "635bd34234923",
+          "name": "leisure",
+          "slug": "leisure"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "home",
+      "icon": "fas fa-home",
+      "uuid": "635bd3424b7b8",
+      "slug": "home",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd34262b0a",
+          "name": "rent",
+          "slug": "rent"
+        },
+        {
+          "uuid": "635bd34279fdd",
+          "name": "property insurance",
+          "slug": "property-insurance"
+        },
+        {
+          "uuid": "635bd3429166f",
+          "name": "condominium",
+          "slug": "condominium"
+        },
+        {
+          "uuid": "635bd342a923b",
+          "name": "energy & utilities",
+          "slug": "energy-utilities"
+        },
+        {
+          "uuid": "635bd342c0b1e",
+          "name": "maintenance",
+          "slug": "maintenance"
+        },
+        {
+          "uuid": "635bd342d7fed",
+          "name": "mortgage",
+          "slug": "mortgage"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "transport",
+      "icon": "fas fa-subway",
+      "slug": "transport",
+      "uuid": "635bd3436347d",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd3437b202",
+          "name": "taxi",
+          "slug": "taxi"
+        },
+        {
+          "uuid": "635bd34391f8a",
+          "name": "public transport",
+          "slug": "public-transport"
+        },
+        {
+          "uuid": "635bd343a9a52",
+          "name": "trips",
+          "slug": "trips"
+        },
+        {
+          "uuid": "635bd343c1e24",
+          "name": "business trips",
+          "slug": "business-trips"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "vehicles",
+      "icon": "fas fa-car-alt",
+      "uuid": "635bd343d8220",
+      "slug": "vehicles",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd343ee87a",
+          "name": "vehicle insurance",
+          "slug": "vehicle-insurance"
+        },
+        {
+          "uuid": "635bd34410996",
+          "name": "fuel",
+          "slug": "fuel"
+        },
+        {
+          "uuid": "635bd34427667",
+          "name": "vehicle maintenance",
+          "slug": "vehicle-maintenance"
+        },
+        {
+          "uuid": "635bd3443e70c",
+          "name": "rentals",
+          "slug": "rentals"
+        },
+        {
+          "uuid": "635bd34455430",
+          "name": "parking",
+          "slug": "parking"
+        },
+        {
+          "uuid": "635bd3456ea7b",
+          "name": "tolls",
+          "slug": "tolls"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "entertainment",
+      "icon": "fas fa-cloud-sun",
+      "uuid": "635bd3458b904",
+      "slug": "entertainment",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd34673e16",
+          "name": "alcohol",
+          "slug": "alcohol"
+        },
+        {
+          "uuid": "635bd3468a7df",
+          "name": "tobacco",
+          "slug": "tobacco"
+        },
+        {
+          "uuid": "635bd346a22da",
+          "name": "culture, sports events",
+          "slug": "culture-sports-events"
+        },
+        {
+          "uuid": "635bd346b8ce8",
+          "name": "donations, charity",
+          "slug": "donations-charity"
+        },
+        {
+          "uuid": "635bd346cf022",
+          "name": "events",
+          "slug": "events"
+        },
+        {
+          "uuid": "635bd346e4ea6",
+          "name": "wedding",
+          "slug": "wedding"
+        },
+        {
+          "uuid": "635bd347080fa",
+          "name": "training, development",
+          "slug": "training-development"
+        },
+        {
+          "uuid": "635bd3471e92f",
+          "name": "hobbies",
+          "slug": "hobbies"
+        },
+        {
+          "uuid": "635bd34735340",
+          "name": "books, audio, subscriptions",
+          "slug": "books-audio-subscriptions"
+        },
+        {
+          "uuid": "635bd3475c224",
+          "name": "lotteries & gambling",
+          "slug": "lotteries-gambling"
+        },
+        {
+          "uuid": "635bd347738ec",
+          "name": "health",
+          "slug": "health"
+        },
+        {
+          "uuid": "635bd34789d6c",
+          "name": "sports, fitness",
+          "slug": "sports-fitness"
+        },
+        {
+          "uuid": "635bd347a4aa1",
+          "name": "tv & streaming",
+          "slug": "tv-streaming"
+        },
+        {
+          "uuid": "635bd34818d9b",
+          "name": "holidays",
+          "slug": "holidays"
+        },
+        {
+          "uuid": "635bd3489a8e7",
+          "name": "hotels",
+          "slug": "hotels"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "communication & pc",
+      "icon": "fas fa-laptop",
+      "slug": "communication-pc",
+      "uuid": "635bd348b183f",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd348c7799",
+          "name": "internet",
+          "slug": "internet"
+        },
+        {
+          "uuid": "635bd348de1cb",
+          "name": "postal services",
+          "slug": "postal-services"
+        },
+        {
+          "uuid": "635bd34901262",
+          "name": "software, apps & games",
+          "slug": "software-apps-games"
+        },
+        {
+          "uuid": "635bd34917feb",
+          "name": "telephone",
+          "slug": "telephone"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "financial expenses",
+      "icon": "fas fa-hand-holding-usd",
+      "uuid": "635bd3492e995",
+      "slug": "financial-expenses",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd34945b39",
+          "name": "family allowance",
+          "slug": "family-allowance"
+        },
+        {
+          "uuid": "635bd3495c208",
+          "name": "insurance",
+          "slug": "insurance"
+        },
+        {
+          "uuid": "635bd34972877",
+          "name": "consultancy",
+          "slug": "consultancy"
+        },
+        {
+          "uuid": "635bd34988c32",
+          "name": "fines",
+          "slug": "fines"
+        },
+        {
+          "uuid": "635bd3499f86c",
+          "name": "loans & interests",
+          "slug": "loans-interests"
+        },
+        {
+          "uuid": "635bd349b66a4",
+          "name": "taxes",
+          "slug": "taxes"
+        },
+        {
+          "uuid": "635bd349cce90",
+          "name": "taxes, commissions",
+          "slug": "taxes-commissions"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "investments",
+      "icon": "fas fa-file-invoice-dollar",
+      "uuid": "635bd349e3b38",
+      "slug": "investments",
+      "type": "investments",
+      "subCategory": [
+        {
+          "uuid": "635bd34a05b27",
+          "name": "real estate",
+          "slug": "real-estate"
+        },
+        {
+          "uuid": "635bd34a1cb95",
+          "name": "movable property",
+          "slug": "movable-property"
+        },
+        {
+          "uuid": "635bd34a33e4b",
+          "name": "financial investments",
+          "slug": "financial-investments"
+        },
+        {
+          "uuid": "635bd34a4a6eb",
+          "name": "collections",
+          "slug": "collections"
+        },
+        {
+          "uuid": "635bd34a6103c",
+          "name": "savings",
+          "slug": "savings"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "income",
+      "icon": "fas fa-euro-sign",
+      "uuid": "635bd34a79940",
+      "slug": "income",
+      "type": "incoming",
+      "subCategory": [
+        {
+          "uuid": "635bd34a92396",
+          "name": "checks",
+          "slug": "checks"
+        },
+        {
+          "uuid": "635bd34aac024",
+          "name": "coupons",
+          "slug": "coupons"
+        },
+        {
+          "uuid": "635bd34ac3e9b",
+          "name": "family allowance",
+          "slug": "family-allowance"
+        },
+        {
+          "uuid": "635bd34ada18a",
+          "name": "rental income",
+          "slug": "rental-income"
+        },
+        {
+          "uuid": "635bd34af17aa",
+          "name": "interest, dividends",
+          "slug": "interest-dividends"
+        },
+        {
+          "uuid": "635bd34b14b4a",
+          "name": "lotteries & gambling",
+          "slug": "lotteries-gambling"
+        },
+        {
+          "uuid": "635bd34b2bcd4",
+          "name": "loans, rentals",
+          "slug": "loans-rentals"
+        },
+        {
+          "uuid": "635bd34bdce92",
+          "name": "quotas & grants",
+          "slug": "quotas-grants"
+        },
+        {
+          "uuid": "635bd34c00eec",
+          "name": "gifts",
+          "slug": "gifts"
+        },
+        {
+          "uuid": "635bd34ca2820",
+          "name": "refunds (taxes, purchases)",
+          "slug": "refunds-taxes-purchases"
+        },
+        {
+          "uuid": "6357ff2aaf8eb",
+          "name": "salary",
+          "slug": "salary"
+        },
+        {
+          "uuid": "6357ff2ab1a47",
+          "name": "sales",
+          "slug": "sales"
+        }
+      ]
+    }
+  },
+  {
+    "category": {
+      "label": "other",
+      "icon": "fas fa-question",
+      "uuid": "635bd34d0dfc4",
+      "slug": "other",
+      "type": "expenses",
+      "subCategory": [
+        {
+          "uuid": "635bd34d25f01",
+          "name": "other",
+          "slug": "other"
+        },
+        {
+          "uuid": "6560a071d8822",
+          "name": "transfer",
+          "exclude_from_stats": 1,
+          "slug": "transfer"
+        }
+      ]
+    }
+  }
+]

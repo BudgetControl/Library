@@ -1,0 +1,22 @@
+  [
+    {
+      "label": "Credit Card",
+      "slug": "credit-card"
+    },
+    {
+      "label": "Debit Card",
+      "slug": "debit-card"
+    },
+    {
+      "label": "Bank Transfer",
+      "slug": "bank-transfer"
+    },
+    {
+      "label": "Cash",
+      "slug": "cash"
+    },
+    {
+      "label": "Check",
+      "slug": "check"
+    }
+  ]
