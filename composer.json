@@ -15,6 +15,7 @@
     "minimum-stability": "stable",
     "require": {
         "illuminate/database": "11.19",
-        "ramsey/uuid": "^4.7"
+        "ramsey/uuid": "^4.7",
+        "webit/bcmath": "^2.0"
     }
 }
