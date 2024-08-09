@@ -1,8 +1,12 @@
 <?php
 namespace Budgetcontrol\Library\Model;
 
+use Budgetcontrol\Library\Definition\Format;
+use Carbon\Carbon;
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Entry extends Model implements EntryInterface
 {
@@ -127,5 +131,13 @@ class Entry extends Model implements EntryInterface
     public function scopeWithRelations($query)
     {
         return $query->with('label', 'wallet', 'subCategory.category', 'payee', 'currency', 'paymentType');
+    }
+
+    protected function dateTime(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => Carbon::parse($value)->toAtomString(),
+            set: fn (string $value) => Carbon::parse($value)->format(Format::dateTime->value),
+        );
     }
 }

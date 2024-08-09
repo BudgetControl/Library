@@ -14,13 +14,10 @@ class WalletService {
     protected ?Entry $oldEntry = null;
     protected bool $revert = false;
 
-    public function __construct(EntryInterface $entry)
+    public function __construct(EntryInterface $entry, ?EntryInterface $oldEntry = null)
     {
         $this->entry = $entry;
-        $entryDB = Entry::WithRelations()->where('id', $entry->id)->first();
-        if (!is_null($entryDB)) {
-            $this->oldEntry = $entryDB;
-        }
+        $this->oldEntry = $oldEntry;        
     }
 
     /**
@@ -40,7 +37,7 @@ class WalletService {
                 $account = $entry->wallet->id;
 
                 //update balance
-                $this->update($amount, $account);
+                $this->update((float) $amount, $account);
             }
         }
 
@@ -177,9 +174,9 @@ class WalletService {
     {
         $account = Wallet::findOrFail($account_id);
         $wallet = new BcMathNumber($account->balance);
-        $wallet->add($amount);
+        $wallet = $wallet->add($amount);
 
-        $account->balance = $wallet->getValue();
+        $account->balance = $wallet->toFloat();
         $account->save();
     }
 }

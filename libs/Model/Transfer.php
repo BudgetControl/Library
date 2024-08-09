@@ -21,10 +21,9 @@ class Transfer extends Entry
 
     protected function categoryId(): Attribute
     {
-        return Attribute::make(
-            get: fn (string $value) => 75,
-            set: fn (string $value) => 75,
-        );
+        return Attribute::set(function(){
+            return 75;
+        });
     }
 
 }
