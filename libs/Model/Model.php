@@ -3,7 +3,7 @@ namespace Budgetcontrol\Library\Model;
 
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 
-class Model extends EloquentModel implements EntryInterface
+class Model extends Entry implements EntryInterface
 {
     protected $table = 'models';
 
