@@ -26,6 +26,16 @@ class Payee extends Model implements EntryInterface
         }
         parent::__construct($attributes);
     }
+
+    public function wallet()
+    {
+        return $this->belongsTo(Wallet::class);
+    }
+
+    public function entry()
+    {
+        return $this->hasMany(Entry::class);
+    }
     
 
 }
