@@ -7,6 +7,9 @@ class Budget extends Model implements EntryInterface
 {
     protected $table = 'budgets';
 
+    protected $primaryKey = null;
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'amount',
