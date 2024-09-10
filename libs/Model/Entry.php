@@ -75,14 +75,6 @@ class Entry extends Model implements EntryInterface
     }
 
     /**
-     * The users that belong to the role.
-     */
-    public function label()
-    {
-        return $this->belongsToMany(Label::class, 'entry_labels','entry_id', 'labels_id');
-    }
-
-    /**
      * Get the category
      */
     public function subCategory()
@@ -130,7 +122,7 @@ class Entry extends Model implements EntryInterface
      */
     public function scopeWithRelations($query)
     {
-        return $query->with('label', 'wallet', 'subCategory.category', 'payee', 'currency', 'paymentType');
+        return $query->with('labels', 'wallet', 'subCategory.category', 'payee', 'currency', 'paymentType');
     }
 
     protected function dateTime(): Attribute
@@ -139,5 +131,13 @@ class Entry extends Model implements EntryInterface
             get: fn (string $value) => Carbon::parse($value)->toAtomString(),
             set: fn (string $value) => Carbon::parse($value)->format(Format::dateTime->value),
         );
+    }
+
+    /**
+     * The users that belong to the role.
+     */
+    public function labels()
+    {
+        return $this->belongsToMany(Label::class, 'planned_entry_labels','planned_entry_id', 'labels_id');
     }
 }
