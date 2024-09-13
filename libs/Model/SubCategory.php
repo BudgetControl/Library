@@ -4,7 +4,7 @@ namespace Budgetcontrol\Library\Model;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SubCategory extends Model implements EntryInterface
+class SubCategory extends BaseModel implements EntryInterface
 {
     use SoftDeletes;
     

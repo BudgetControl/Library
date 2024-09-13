@@ -4,7 +4,7 @@ namespace Budgetcontrol\Library\Model;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Label extends Model implements EntryInterface
+class Label extends BaseModel implements EntryInterface
 {
     use SoftDeletes;
     protected $table = 'labels';
@@ -14,6 +14,6 @@ class Label extends Model implements EntryInterface
      */
     public function entries()
     {
-        return $this->belongsToMany(EntryType::class, 'entry_labels');
+        return $this->belongsToMany(Entry::class, 'entry_labels');
     }
 }

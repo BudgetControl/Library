@@ -1,15 +1,16 @@
 <?php
 namespace Budgetcontrol\Library\Model;
 
+use BudgetcontrolLibs\Crypt\Traits\Crypt;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Wallet extends Model implements EntryInterface
+class Wallet extends BaseModel implements EntryInterface
 {
-    use SoftDeletes, HasFactory;
+    use SoftDeletes, HasFactory, Crypt;
     
     protected $table = 'wallets';
 
@@ -44,6 +45,14 @@ class Wallet extends Model implements EntryInterface
         return Attribute::make(
             get: fn (?string $value) => is_null($value) ? null : Carbon::parse($value)->toAtomString(),
             set: fn (?string $value) => is_null($value) ? null : Carbon::parse($value)->format('Y-m-d')
+        );
+    }
+
+    public function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn(string $value) => $this->decrypt($value),
+            set: fn(string $value) => $this->encrypt($value),
         );
     }
 }

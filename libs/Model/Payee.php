@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Payee extends Model implements EntryInterface
+class Payee extends BaseModel implements EntryInterface
 {
     use SoftDeletes, HasFactory;
 
