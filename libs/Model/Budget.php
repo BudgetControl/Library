@@ -3,7 +3,7 @@ namespace Budgetcontrol\Library\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Budget extends Model implements EntryInterface
+class Budget extends BaseModel implements EntryInterface
 {
     protected $table = 'budgets';
 

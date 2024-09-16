@@ -3,7 +3,7 @@ namespace Budgetcontrol\Library\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PaymentType extends Model implements EntryInterface
+class PaymentType extends BaseModel implements EntryInterface
 {
     protected $table = 'payments_types';
 }

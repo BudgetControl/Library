@@ -1,6 +1,12 @@
 {
     "name": "budgetcontrol/library",
     "type": "library",
+    "repositories": {
+        "budgetcontrol/cryptable" : {
+            "type":"vcs",
+            "url":"git@github.com:BudgetControl/LibsCryptable.git"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Budgetcontrol\\Library\\": "libs/"
@@ -16,6 +22,7 @@
     "require": {
         "illuminate/database": "11.19",
         "ramsey/uuid": "^4.7",
-        "webit/bcmath": "^2.0"
+        "webit/bcmath": "^2.0",
+        "budgetcontrol/cryptable": "^v0.1"
     }
 }
