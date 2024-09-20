@@ -16,7 +16,6 @@ enum Period: string {
     case yearly = 'yearly';
     case recursively = 'recursively';
     case oneShot = 'one-shot';
-}
 
     /**
      * Returns a list of periods.
@@ -33,3 +32,5 @@ enum Period: string {
             self::oneShot
         ];
     }
+
+}
