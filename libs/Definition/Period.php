@@ -24,12 +24,12 @@ enum Period: string {
      */
     public static function periodList(): array {
         return [
-            self::daily,
-            self::weekly,
-            self::monthly,
-            self::yearly,
-            self::recursively,
-            self::oneShot
+            self::daily->value,
+            self::weekly->value,
+            self::monthly->value,
+            self::yearly->value,
+            self::recursively->value,
+            self::oneShot->value
         ];
     }
 
