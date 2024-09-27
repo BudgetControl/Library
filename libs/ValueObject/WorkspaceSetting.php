@@ -8,11 +8,11 @@ use Budgetcontrol\Library\Interfaces\ValueObjectInterface;
 final class WorkspaceSetting implements ValueObjectInterface {
 
     private int $currency_id;
-    private int $paymenttype_id;
+    private int $payment_type_id;
 
-    private function __construct(int $currency_id, int $paymenttype_id) {
+    private function __construct(int $currency_id, int $payment_type_id) {
         $this->currency_id = $currency_id;
-        $this->paymenttype_id = $paymenttype_id;
+        $this->payment_type_id = $payment_type_id;
     }
 
     /**
@@ -22,8 +22,9 @@ final class WorkspaceSetting implements ValueObjectInterface {
      * @return self The newly created instance of the WorkspaceSetting class.
      */
     public static function create(...$value): self
-    {
-        return new self($value['currency_id'], $value['paymenttype_id']);
+    {   
+        list($currency_id, $payment_type_id) = $value;
+        return new self($currency_id, $payment_type_id);
     }
 
     /**
@@ -51,25 +52,25 @@ final class WorkspaceSetting implements ValueObjectInterface {
     }
 
     /**
-     * Get the value of paymenttype_id
+     * Get the value of payment_type_id
      *
      * @return int
      */
     public function getPaymenttypeId(): int
     {
-        return $this->paymenttype_id;
+        return $this->payment_type_id;
     }
 
     /**
-     * Set the value of paymenttype_id
+     * Set the value of payment_type_id
      *
-     * @param int $paymenttype_id
+     * @param int $payment_type_id
      *
      * @return self
      */
-    public function setPaymenttypeId(int $paymenttype_id): self
+    public function setPaymenttypeId(int $payment_type_id): self
     {
-        $this->paymenttype_id = $paymenttype_id;
+        $this->payment_type_id = $payment_type_id;
 
         return $this;
     }
@@ -82,7 +83,7 @@ final class WorkspaceSetting implements ValueObjectInterface {
     public function toJson(): object {
         return (object) [
             'currency_id' => $this->currency_id,
-            'paymenttype_id' => $this->paymenttype_id
+            'payment_type_id' => $this->payment_type_id
         ];
     }
 

@@ -18,10 +18,18 @@ class WorkspaceSettings extends BaseModel implements EntryInterface
         'data'
     ];
 
-    public function setting(): Attribute
+    public function data(): Attribute
     {
+        $casting = function($value) {
+            $data = json_decode($value, true);
+            return WorkspaceSetting::create(
+                $data['currency_id'],
+                $data['payment_type_id']
+            );
+        };
+
         return Attribute::make(
-            get: fn (string $value) => fn () => WorkspaceSetting::create(json_encode($value, true)),
+            get: fn (string $value) => $casting($value),
             set: fn (WorkspaceSetting $value) => $value->__toString(),
         );
     }
