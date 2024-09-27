@@ -16,4 +16,21 @@ enum Period: string {
     case yearly = 'yearly';
     case recursively = 'recursively';
     case oneShot = 'one-shot';
+
+    /**
+     * Returns a list of periods.
+     *
+     * @return array The list of periods.
+     */
+    public static function periodList(): array {
+        return [
+            self::daily->value,
+            self::weekly->value,
+            self::monthly->value,
+            self::yearly->value,
+            self::recursively->value,
+            self::oneShot->value
+        ];
+    }
+
 }
