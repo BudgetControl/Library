@@ -30,4 +30,12 @@ class PlannedEntry extends Entry implements EntryInterface
         'workspace_id',
         'planning'
     ];
+
+    /**
+     * The users that belong to the role.
+     */
+    public function labels()
+    {
+        return $this->belongsToMany(Label::class, 'planned_entry_labels','planned_entry_id', 'labels_id');
+    }
 }
