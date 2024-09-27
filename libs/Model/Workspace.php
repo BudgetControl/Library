@@ -17,5 +17,10 @@ class Workspace extends BaseModel implements EntryInterface
         'user_id',
         'uuid',
     ];
+
+    public function workspaceSettings()
+    {
+        return $this->hasOne(WorkspaceSettings::class);
+    }
     
 }
