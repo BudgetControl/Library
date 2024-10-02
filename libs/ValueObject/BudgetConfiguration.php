@@ -6,6 +6,7 @@ namespace Budgetcontrol\Library\ValueObject;
 use Budgetcontrol\Library\Interfaces\ValueObjectInterface;
 use DateTime;
 use Budgetcontrol\Library\Definition\Format;
+use Budgetcontrol\Library\Definition\Period;
 
 final class BudgetConfiguration implements ValueObjectInterface {
 
@@ -17,7 +18,7 @@ final class BudgetConfiguration implements ValueObjectInterface {
     private ?DateTime $period_end;
     private ?DateTime $period_start;
 
-    private function __construct(array $tags = [], array $types = [], string $period, array $accounts = [], array $categories = [], ?string $period_end = null, ?string $period_start = null) {
+    private function __construct(array $tags = [], array $types = [], string $period = Period::monthly->value, array $accounts = [], array $categories = [], ?string $period_end = null, ?string $period_start = null) {
         $this->tags = $tags;
         $this->types = $types;
         $this->period = $period;
