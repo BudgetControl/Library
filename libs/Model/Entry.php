@@ -103,7 +103,7 @@ class Entry extends BaseModel implements EntryInterface
      */
     public function paymentType()
     {
-        return $this->belongsTo(PaymentType::class);
+        return $this->belongsTo(PaymentType::class, 'payment_type', 'id');
     }
 
     /**
