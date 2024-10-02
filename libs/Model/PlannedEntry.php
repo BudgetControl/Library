@@ -31,6 +31,14 @@ class PlannedEntry extends Entry implements EntryInterface
         'planning'
     ];
 
+    protected function endDateTime(): Attribute
+    {
+        return Attribute::make(
+            get: fn (?string $value) => is_null($value) ? null : Carbon::parse($value)->format(Format::dateTime->value),
+            set: fn (?string $value) => is_null($value) ? null : Carbon::parse($value)->format(Format::dateTime->value),
+        );
+    }
+
     /**
      * The users that belong to the role.
      */
