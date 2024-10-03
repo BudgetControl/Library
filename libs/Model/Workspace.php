@@ -22,5 +22,18 @@ class Workspace extends BaseModel implements EntryInterface
     {
         return $this->hasOne(WorkspaceSettings::class);
     }
+
+    /**
+     * The users that belong to the role.
+     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'workspaces_users_mm','workspace_id','user_id');
+    }
+
+    public function scopeByUuid($query,$uuid)
+    {
+        return $query->where('uuid', $uuid)->with('setting')->with('users');
+    }
     
 }
