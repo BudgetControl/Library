@@ -34,6 +34,14 @@ class Wallet extends BaseModel implements EntryInterface
         'voucher_value'
     ];
 
+    protected $casts = [
+        'exclude_from_stats' => 'boolean',
+        'installement_value' => 'float',
+        'balance' => 'float',
+        'credit_limit' => 'float',
+        'voucher_value' => 'float'
+    ];
+
     protected function closingDate(): Attribute
     {
         return Attribute::make(
@@ -93,9 +101,10 @@ class Wallet extends BaseModel implements EntryInterface
                 $valueInValut = $value;
                 $valueInVoucher = $value / $this->attributes['voucher_value'];
 
-                $value = new \stdClass();
-                $value->balance = $valueInValut;
-                $value->voucher = $valueInVoucher;
+                $value = [
+                    'value_in_voucher' => $valueInVoucher,
+                    'value_in_valut' => $valueInValut
+                ];
             }
             
             return $value;
