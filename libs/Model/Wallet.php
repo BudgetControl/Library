@@ -3,10 +3,11 @@ namespace Budgetcontrol\Library\Model;
 
 use BudgetcontrolLibs\Crypt\Traits\Crypt;
 use Illuminate\Support\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Budgetcontrol\Library\Entity\Wallet as EntityWallet;
+
 
 class Wallet extends BaseModel implements EntryInterface
 {
@@ -30,6 +31,7 @@ class Wallet extends BaseModel implements EntryInterface
         'sorting',
         'credit_limit',
         'uuid',
+        'voucher_value'
     ];
 
     protected function closingDate(): Attribute
@@ -53,6 +55,55 @@ class Wallet extends BaseModel implements EntryInterface
         return Attribute::make(
             get: fn(string $value) => $this->decrypt($value),
             set: fn(string $value) => $this->encrypt($value),
+        );
+    }
+
+    /**
+     * Get the balance attribute for the wallet.
+     *
+     * @return Attribute The balance attribute.
+     */
+    public function balance(): Attribute
+    {
+        /**
+         * A callback function to cast savings values.
+         *
+         * This function is used to process and cast the savings values
+         * within the Wallet model.
+         *
+         * @param mixed $value The value to be casted.
+         * @return mixed The casted value.
+         */
+        $castingSavings = function ($value) {
+            if($this->attributes['type'] === EntityWallet::voucher->value) {
+                $value = $this->attributes['voucher_value'] * $value;
+            }
+            
+            return $value;
+        };
+
+        /**
+         * A closure function that performs type casting on the provided value.
+         *
+         * @param mixed $value The value to be type casted.
+         * @return mixed The type casted value.
+         */
+        $castingGetting = function ($value) {
+            if($this->attributes['type'] === EntityWallet::voucher->value) {
+                $valueInValut = $value;
+                $valueInVoucher = $value / $this->attributes['voucher_value'];
+
+                $value = new \stdClass();
+                $value->balance = $valueInValut;
+                $value->voucher = $valueInVoucher;
+            }
+            
+            return $value;
+        };
+
+        return Attribute::make(
+            get: fn(float $value) => $castingGetting($value),
+            set: fn(float $value) => $castingSavings($value),
         );
     }
 }

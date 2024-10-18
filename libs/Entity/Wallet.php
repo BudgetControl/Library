@@ -15,6 +15,7 @@ enum Wallet: string {
     case other = 'other';
     case prepaidCard = 'prepaid-card';
     case creditCardRevolving = 'credit-card-revolving';
+    case voucher = 'voucher';
 
     public static function types(): array {
         return [
@@ -26,6 +27,7 @@ enum Wallet: string {
             self::other->value,
             self::prepaidCard->value,
             self::creditCardRevolving->value,
+            self::voucher->value
         ];
     }
 }
