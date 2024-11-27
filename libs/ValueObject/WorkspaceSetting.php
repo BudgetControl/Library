@@ -8,10 +8,10 @@ use Budgetcontrol\Library\Model\Currency;
 
 final class WorkspaceSetting implements ValueObjectInterface {
 
-    private Currency $currency;
+    private Currency|array $currency;
     private int $payment_type_id;
 
-    private function __construct(Currency $currency, int $payment_type_id) {
+    private function __construct(Currency|array $currency, int $payment_type_id) {
         $this->currency = $currency;
         $this->payment_type_id = $payment_type_id;
     }
@@ -33,7 +33,7 @@ final class WorkspaceSetting implements ValueObjectInterface {
      *
      * @return int
      */
-    public function getCurrency(): Currency
+    public function getCurrency(): Currency|array
     {
         return $this->currency;
     }
@@ -45,7 +45,7 @@ final class WorkspaceSetting implements ValueObjectInterface {
      *
      * @return self
      */
-    public function setCurrencyId(Currency $currency): self
+    public function setCurrencyId(Currency|array $currency): self
     {
         $this->currency = $currency;
 
@@ -82,13 +82,17 @@ final class WorkspaceSetting implements ValueObjectInterface {
      * @return object The value of the value object.
      */
     public function toJson(): object {
+        $currency = $this->currency;
+        if(is_array($this->currency)) {
+            $currency = (object) $this->currency;
+        }
         return (object) [
             'currency' => [
-                'id' => $this->currency->id,
-                'name' => $this->currency->name,
-                'symbol' => $this->currency->icon,
-                'label' => $this->currency->label,
-                'slug' => $this->currency->slug
+                'id' => $currency->id,
+                'name' => $currency->name,
+                'symbol' => $currency->icon,
+                'label' => $currency->label,
+                'slug' => $currency->slug
             ],
             'payment_type_id' => $this->payment_type_id
         ];
