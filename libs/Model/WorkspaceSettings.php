@@ -23,7 +23,7 @@ class WorkspaceSettings extends BaseModel implements EntryInterface
         $casting = function($value) {
             $data = json_decode($value, true);
             return WorkspaceSetting::create(
-                Workspace::where('id',$data['currency']['id'])->get(),
+                Currency::where('id',$data['currency']['id'])->get(),
                 $data['payment_type_id']
             );
         };
