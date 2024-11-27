@@ -4,14 +4,15 @@ declare(strict_types=1);
 namespace Budgetcontrol\Library\ValueObject;
 
 use Budgetcontrol\Library\Interfaces\ValueObjectInterface;
+use Budgetcontrol\Library\Model\Currency;
 
 final class WorkspaceSetting implements ValueObjectInterface {
 
-    private int $currency_id;
+    private Currency $currency;
     private int $payment_type_id;
 
-    private function __construct(int $currency_id, int $payment_type_id) {
-        $this->currency_id = $currency_id;
+    private function __construct(Currency $currency, int $payment_type_id) {
+        $this->currency = $currency;
         $this->payment_type_id = $payment_type_id;
     }
 
@@ -23,8 +24,8 @@ final class WorkspaceSetting implements ValueObjectInterface {
      */
     public static function create(...$value): self
     {   
-        list($currency_id, $payment_type_id) = $value;
-        return new self($currency_id, $payment_type_id);
+        list($currency, $payment_type_id) = $value;
+        return new self($currency, $payment_type_id);
     }
 
     /**
@@ -32,9 +33,9 @@ final class WorkspaceSetting implements ValueObjectInterface {
      *
      * @return int
      */
-    public function getCurrencyId(): int
+    public function getCurrency(): Currency
     {
-        return $this->currency_id;
+        return $this->currency;
     }
 
     /**
@@ -44,9 +45,9 @@ final class WorkspaceSetting implements ValueObjectInterface {
      *
      * @return self
      */
-    public function setCurrencyId(int $currency_id): self
+    public function setCurrencyId(Currency $currency): self
     {
-        $this->currency_id = $currency_id;
+        $this->currency = $currency;
 
         return $this;
     }
@@ -82,7 +83,13 @@ final class WorkspaceSetting implements ValueObjectInterface {
      */
     public function toJson(): object {
         return (object) [
-            'currency_id' => $this->currency_id,
+            'currency' => [
+                'id' => $this->currency->id,
+                'name' => $this->currency->name,
+                'symbol' => $this->currency->icon,
+                'label' => $this->currency->label,
+                'slug' => $this->currency->slug
+            ],
             'payment_type_id' => $this->payment_type_id
         ];
     }
