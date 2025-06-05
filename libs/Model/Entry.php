@@ -140,4 +140,9 @@ class Entry extends BaseModel implements EntryInterface
     {
         return $this->belongsToMany(Label::class, 'entry_labels','entry_id', 'labels_id');
     }
+
+    public function goals()
+    {
+        return $this->belongsTo(Goal::class);
+    }
 }
