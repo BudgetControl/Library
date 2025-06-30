@@ -2,6 +2,7 @@
 namespace Budgetcontrol\Library\Model;
 
 use Budgetcontrol\Library\Definition\Format;
+use BudgetcontrolLibs\Crypt\Traits\Crypt;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Entry extends BaseModel implements EntryInterface
 {
-    use SoftDeletes;
+    use SoftDeletes, Crypt;
     protected $table = 'entries';
 
     protected $hidden = ['id'];
@@ -50,6 +51,14 @@ class Entry extends BaseModel implements EntryInterface
         'installment' => 'boolean',
         'exclude_from_stats' => 'boolean',
     ];
+
+    public function note(): Attribute
+    {
+        return Attribute::make(
+            get: fn(string $value) => $this->decrypt($value),
+            set: fn(string $value) => $this->encrypt($value),
+        );
+    }
 
     public function __construct(array $attributes = [])
     {
@@ -139,10 +148,5 @@ class Entry extends BaseModel implements EntryInterface
     public function labels()
     {
         return $this->belongsToMany(Label::class, 'entry_labels','entry_id', 'labels_id');
-    }
-
-    public function goals()
-    {
-        return $this->belongsTo(Goal::class);
     }
 }
