@@ -17,6 +17,7 @@ class Goal extends Model
         'account_id',
         'type',
         'status',
+        'balance'
     ];
 
     public function entries()
