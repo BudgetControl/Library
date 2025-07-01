@@ -39,7 +39,8 @@ class Entry extends BaseModel implements EntryInterface
         'deleted_at',
         'geolocation',
         'workspace_id',
-        'exclude_from_stats'
+        'exclude_from_stats',
+        'goal_id',
     ];
 
     protected $casts = [
