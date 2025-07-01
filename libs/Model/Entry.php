@@ -55,9 +55,23 @@ class Entry extends BaseModel implements EntryInterface
 
     public function note(): Attribute
     {
+        $encrypt = function(?string $value) {
+            if (is_null($value)) {
+                return null;
+            }
+            return $this->encrypt($value);
+        };
+
+        $decrypt = function(?string $value) {
+            if (is_null($value)) {
+                return null;
+            }
+            return $this->decrypt($value);
+        };
+
         return Attribute::make(
-            get: fn(string $value) => $this->decrypt($value),
-            set: fn(string $value) => $this->encrypt($value),
+            get: $decrypt,
+            set: $encrypt,
         );
     }
 
