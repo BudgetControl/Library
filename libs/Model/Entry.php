@@ -164,4 +164,12 @@ class Entry extends BaseModel implements EntryInterface
     {
         return $this->belongsToMany(Label::class, 'entry_labels','entry_id', 'labels_id');
     }
+
+    /**
+     * Get the goal associated with the entry.
+     */
+    public function goal(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Goal::class, 'goal_id', 'id');
+    }
 }
