@@ -146,7 +146,7 @@ class Entry extends BaseModel implements EntryInterface
      */
     public function scopeWithRelations($query)
     {
-        return $query->with('labels', 'wallet', 'subCategory.category', 'payee', 'currency', 'paymentType');
+        return $query->with('labels', 'wallet', 'subCategory.category', 'payee', 'currency', 'paymentType', 'goal');
     }
 
     protected function dateTime(): Attribute
