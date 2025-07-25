@@ -66,4 +66,9 @@ class User extends BaseModel implements EntryInterface
     {
         return $this->hasMany(Workspace::class);
     }
+
+    public function fcmTokens()
+    {
+        return $this->hasMany(FcmToken::class, 'user_id');
+    }
 }
