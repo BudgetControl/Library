@@ -13,6 +13,8 @@ class FcmToken extends BaseModel implements EntryInterface
         'token',
         'user_id',
         'device_info',
+        'platform',
+        'lang'
     ];
 
     public function user()
