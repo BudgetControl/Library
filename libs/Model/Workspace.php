@@ -33,7 +33,7 @@ class Workspace extends BaseModel implements EntryInterface
 
     public function scopeByUuid($query,$uuid)
     {
-        return $query->where('uuid', $uuid)->with('setting')->with('users');
+        return $query->where('uuid', $uuid)->with('workspaceSettings')->with('users');
     }
     
 }
