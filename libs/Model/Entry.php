@@ -40,6 +40,7 @@ class Entry extends BaseModel implements EntryInterface
         'workspace_id',
         'exclude_from_stats',
         'goal_id',
+        'has_keywords',
     ];
 
     protected $casts = [
@@ -50,6 +51,7 @@ class Entry extends BaseModel implements EntryInterface
         'confirmed' => 'boolean',
         'installment' => 'boolean',
         'exclude_from_stats' => 'boolean',
+        'has_keywords' => 'boolean',
     ];
 
     public function note(): Attribute
@@ -58,6 +60,8 @@ class Entry extends BaseModel implements EntryInterface
             if (is_null($value)) {
                 return null;
             }
+            // Imposta has_keywords a false quando note viene aggiornato
+            $this->setAttribute('has_keywords', false);
             return $this->encrypt($value);
         };
 
