@@ -74,26 +74,6 @@ class Entry extends BaseModel implements EntryInterface
         );
     }
 
-    public function entriesKeywords(): Attribute
-    {
-        $encrypt = function(array $value) {
-            $stringKey = '';
-            foreach ($value as $key => $val) {
-                $stringKey .= $this->hash($val) . ' ';
-            }
-            return $stringKey;
-        };
-
-        $decrypt = function(?string $value) {
-            return "You cannot decrypt this value as it is hashed.";
-        };
-
-        return Attribute::make(
-            get: $decrypt,
-            set: $encrypt,
-        );
-    }
-
     public function __construct(array $attributes = [])
     {
         if(!isset($attributes['uuid'])) {
