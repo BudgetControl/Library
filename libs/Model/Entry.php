@@ -4,14 +4,13 @@ namespace Budgetcontrol\Library\Model;
 use Budgetcontrol\Library\Definition\Format;
 use BudgetcontrolLibs\Crypt\Traits\Crypt;
 use Carbon\Carbon;
-use DateTime;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use BudgetcontrolLibs\Crypt\Traits\Hash;
 
 class Entry extends BaseModel implements EntryInterface
 {
-    use SoftDeletes, Crypt;
+    use SoftDeletes, Crypt, Hash;
     protected $table = 'entries';
 
     protected $hidden = ['id'];
@@ -67,6 +66,26 @@ class Entry extends BaseModel implements EntryInterface
                 return null;
             }
             return $this->decrypt($value);
+        };
+
+        return Attribute::make(
+            get: $decrypt,
+            set: $encrypt,
+        );
+    }
+
+    public function entriesKeywords(): Attribute
+    {
+        $encrypt = function(array $value) {
+            $stringKey = '';
+            foreach ($value as $key => $val) {
+                $stringKey .= $this->hash($val) . ' ';
+            }
+            return $stringKey;
+        };
+
+        $decrypt = function(?string $value) {
+            return "You cannot decrypt this value as it is hashed.";
         };
 
         return Attribute::make(

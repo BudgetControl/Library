@@ -23,6 +23,6 @@
         "illuminate/database": "11.19",
         "ramsey/uuid": "^4.7",
         "webit/bcmath": "^2.0",
-        "budgetcontrol/cryptable": "^v0.1"
+        "budgetcontrol/cryptable": "^v0.2"
     }
 }

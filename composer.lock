@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea8f88d01c913e7eb43e59223c61073f",
+    "content-hash": "f7dcd7836403126e3ef03e05031d96d6",
     "packages": [
         {
             "name": "brick/math",
@@ -68,16 +68,16 @@
         },
         {
             "name": "budgetcontrol/cryptable",
-            "version": "v0.1",
+            "version": "v0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BudgetControl/LibsCryptable.git",
-                "reference": "12d139566fd5af05c961c99b307dbb490b97e071"
+                "reference": "21e35ee1b3a571979b12a9bf3c8e6c973c411dde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BudgetControl/LibsCryptable/zipball/12d139566fd5af05c961c99b307dbb490b97e071",
-                "reference": "12d139566fd5af05c961c99b307dbb490b97e071",
+                "url": "https://api.github.com/repos/BudgetControl/LibsCryptable/zipball/21e35ee1b3a571979b12a9bf3c8e6c973c411dde",
+                "reference": "21e35ee1b3a571979b12a9bf3c8e6c973c411dde",
                 "shasum": ""
             },
             "require": {
@@ -106,10 +106,10 @@
             ],
             "description": "The cryptable package",
             "support": {
-                "source": "https://github.com/BudgetControl/LibsCryptable/tree/v0.1",
+                "source": "https://github.com/BudgetControl/LibsCryptable/tree/v0.2",
                 "issues": "https://github.com/BudgetControl/LibsCryptable/issues"
             },
-            "time": "2024-09-13T12:32:30+00:00"
+            "time": "2025-08-11T11:57:18+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -1632,10 +1632,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
