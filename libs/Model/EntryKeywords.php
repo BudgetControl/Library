@@ -19,12 +19,8 @@ class EntryKeywords extends BaseModel
 
     public function keyword(): Attribute
     {
-        $encrypt = function(array $value) {
-            $stringKey = '';
-            foreach ($value as $key => $val) {
-                $stringKey .= $this->hash($val) . ' ';
-            }
-            return $stringKey;
+        $encrypt = function(string $value) {
+            return $this->hash($value);
         };
 
         $decrypt = function(?string $value) {

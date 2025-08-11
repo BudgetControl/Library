@@ -171,4 +171,9 @@ class Entry extends BaseModel implements EntryInterface
     {
         return $this->belongsTo(Goal::class, 'goal_id', 'id');
     }
+
+    public function entryKeywords(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(EntryKeywords::class, 'entry_id', 'id');
+    }
 }
